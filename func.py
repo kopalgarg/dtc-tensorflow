@@ -42,7 +42,7 @@ class BHTSNE(sklearn.base.BaseEstimator, sklearn.base.TransformerMixin):
 
 		plt.figure(figsize=(15,10))
 		for m, data in data_dict.items():
-			if data is not []:
+			if data.all():
 				plt.scatter(data[:][0],data[:][1],cmap=cmap(int(m)),label=f'label.{m}: {len(data)}', alpha=0.5)
 		plt.legend()
 		# plt.axis([xmin,xmax,ymin,ymax])
